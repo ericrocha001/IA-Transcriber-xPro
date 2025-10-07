@@ -1,0 +1,5 @@
+{
+  "name": "Transcrição de Áudio com IA",
+  "description": "Um aplicativo web para transcrever arquivos de áudio de qualquer duração usando a API Gemini. Faça o upload do seu áudio e obtenha uma transcrição de texto precisa em segundos.",
+  "requestFramePermissions": []
+}
