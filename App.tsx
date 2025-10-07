@@ -7,7 +7,7 @@ import ErrorMessage from './components/ErrorMessage';
 import { MicIcon } from './components/Icons';
 
 const App: React.FC = () => {
-  const { status, transcription, error, transcribeAudio, reset } = useAudioTranscription();
+  const { status, transcription, error, progress, transcribeAudio, reset } = useAudioTranscription();
 
   const handleFileSelect = (file: File) => {
     transcribeAudio(file);
@@ -20,7 +20,7 @@ const App: React.FC = () => {
   const renderContent = () => {
     switch (status) {
       case 'processing':
-        return <Loader message="Transcrevendo seu áudio... Isso pode levar alguns minutos para arquivos longos." />;
+        return <Loader message="Transcrevendo seu áudio... Isso pode levar alguns minutos para arquivos longos." progress={progress} />;
       case 'success':
         return <TranscriptionDisplay transcription={transcription!} onReset={handleReset} />;
       case 'error':
